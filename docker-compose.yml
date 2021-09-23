@@ -20,10 +20,10 @@ services:
   web:
     build:
       context: ./ 
- ####   dockerfile: ./web.dockerfile      
+         dockerfile: ./nginx/Dockerfile     
     image: nginx:latest
-    #depends_on:
-     # - app
+    depends_on:
+      - app
     ##conatiner_name: nginxapp
 ## we can add always
     restart: unless-stopped
