@@ -25,7 +25,7 @@ services:
     depends_on:
       - app
     ##conatiner_name: nginxapp
-## we can add always
+## we can add always but for some cases
     restart: unless-stopped
     ports: 
        - 80:80
@@ -33,7 +33,10 @@ services:
     networks:
       - basicne
     volumes:
+    ##default root for apache server
       - ./:/var/www/html
+    ###default root for nginx server
+      - ./:/usr/share/nginx/html
 ###########################
   database:
     build:
